@@ -1,0 +1,5 @@
+As a user I want to GET from URLs that use virtualhosting
+
+As a user I want to POST from URLs that use virtualhosting
+
+As a user when I GET or POST I want the result printed to stdout

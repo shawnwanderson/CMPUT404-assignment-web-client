@@ -21,7 +21,6 @@
 import sys
 import socket
 import re
-import select
 # you may use urllib to encode data appropriately
 import urllib
 
@@ -92,16 +91,8 @@ class HTTPClient(object):
 		return body
 
 	# read everything from the socket
-	#http://stackoverflow.com/questions/2719017/how-to-set-timeout-on-pythons-socket-recv-method
 	def recvall(self, sock):
-#		buffer = bytearray()
-#		sock.setblocking(0)
-#		ready = select.select([sock], [], [], [float(5)])
-#		while(ready[0]):
-#			part = sock.recv(1024)
-#			if(part):
-#				buffer.extend(part)
-#		return str(buffer)
+
 		sock.settimeout(2.0)
 		buffer = bytearray()
 		done = False

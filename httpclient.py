@@ -102,6 +102,7 @@ class HTTPClient(object):
 			try:
 				part = sock.recv(1024)
 			except:
+				part = None
 				done = True
 			if (part):
 				buffer.extend(part)
